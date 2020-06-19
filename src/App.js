@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import PokemonList from "./components/PokemonList"
 
 class App extends Component {
 
@@ -10,7 +11,9 @@ class App extends Component {
   componentDidMount(){ 
     fetch('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json')
     .then(response => response.json())
-    .then(response => this.state.pokemon = response.pokemon)
+    .then(response => this.setState({
+      pokemon: response.pokemon
+    }))
   }
 
   render(){
@@ -19,6 +22,7 @@ class App extends Component {
         <div className='title-container'>
         <img className="title-img" src="./pokedex.jpg"></img>
         </div>
+        <PokemonList pokemon={this.state.pokemon}/>
       </div>
     );
   }
