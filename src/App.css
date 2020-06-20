@@ -16,8 +16,22 @@
 }
 
 .pokeCard{
+    text-align: center;
     padding: 30px;
     margin: 20px;
     box-shadow: 0px 0px 4px #666;
 
+}
+
+.typeList{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h4{
+    margin: 0px;
+}
+
+.type{
+    margin: 0px;
 }
