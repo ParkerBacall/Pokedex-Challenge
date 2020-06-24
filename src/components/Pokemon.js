@@ -1,5 +1,6 @@
 import React from 'react'
 import TypeList from './TypeList'
+import WeaknessList from './WeaknessList'
 
 export default function Pokemon({pokemon}) {
     return (
@@ -8,7 +9,7 @@ export default function Pokemon({pokemon}) {
             <h2>{pokemon.name}</h2>
             <h3>{pokemon.num}</h3>
             <TypeList types={pokemon.type}/>
-            <p>weakness: {pokemon.weaknesses}</p>
+            <WeaknessList weaknesses={pokemon.weaknesses}/>
         </div>
     )
 }

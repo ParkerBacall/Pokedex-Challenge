@@ -1,3 +1,6 @@
+.app{
+    background-color: lightblue;
+}
 .title-container{
     display: flex;
     justify-content: center;
@@ -16,10 +19,11 @@
 }
 
 .pokeCard{
+    background-color: lightgreen;
     text-align: center;
     padding: 30px;
     margin: 20px;
-    box-shadow: 0px 0px 4px #666;
+    box-shadow: 0px 0px 8px #666;
     width: 270px;
 
 }
@@ -27,12 +31,30 @@
 .typeList{
     display: flex;
     justify-content: space-evenly;
+    padding: 10px;
+}
+
+.weaknessList{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    flex-wrap: wrap;
 }
 
 h4{
     margin: 0px;
+    padding: 5px;
+    padding-top: 0px;
 }
 
 .type{
     margin: 0px;
+    padding: 5px;
+    padding-top: 0px;
+}
+
+.weakness{
+    margin: 0px;
+    padding: 5px;
+    padding-top: 0px;
 }

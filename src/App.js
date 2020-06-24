@@ -18,9 +18,9 @@ class App extends Component {
 
   render(){
     return (
-      <div className="App">
+      <div className="app">
         <div className='title-container'>
-        <img className="title-img" src="./pokedex.jpg"></img>
+        <img className="title-img" src="./pokedex.png"></img>
         </div>
         <PokemonList pokemon={this.state.pokemon}/>
       </div>
