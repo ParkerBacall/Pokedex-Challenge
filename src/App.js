@@ -6,7 +6,8 @@ import SearchBar from "./components/SearchBar"
 class App extends Component {
 
   state = {
-    pokemon: []
+    pokemon: [],
+    searchTerm: ""
   }
   
   componentDidMount(){ 
@@ -17,6 +18,20 @@ class App extends Component {
     }))
   }
 
+  updateSearchTerm = term =>{
+    this.setState({
+      searchTerm: term
+    })
+    this.filterPokemon(term)
+  }
+
+  filterPokemon = () => {
+    const {pokemon, searchTerm} = this.state
+   return pokemon.filter(pokemonData => {
+      return pokemonData.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+    })
+  }
+
   render(){
     return (
       <div className="app">
@@ -24,9 +39,9 @@ class App extends Component {
         <img className="title-img" src="./pokedex.png"></img>
         </div>
         <div className="search">
-        <SearchBar/>
+        <SearchBar updateSearchTerm={this.updateSearchTerm} searchTerm={this.state.searchTerm}/>
         </div>
-        <PokemonList pokemon={this.state.pokemon}/>
+        <PokemonList pokemon={this.filterPokemon()}/>
       </div>
     );
   }

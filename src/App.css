@@ -63,3 +63,15 @@ h4{
     display: flex;
     justify-content: center;
 }
+
+.searchBar{
+    height: 50px;
+    width: 200px;
+    margin: 20px;
+}
+
+.searchBtn{
+    width: 100px;
+    height: 55px;
+    background-color: yellow;
+}

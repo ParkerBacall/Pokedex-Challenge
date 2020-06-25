@@ -9,7 +9,7 @@ export default function TypeList({types}) {
 
     return (
         <div className="typeList">
-            <h4>type:</h4>
+            <h4>Type:</h4>
             {showType}
         </div>
     )
