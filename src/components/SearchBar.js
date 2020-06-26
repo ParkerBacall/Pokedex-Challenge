@@ -5,6 +5,8 @@ export default function SearchBar({searchTerm, updateSearchTerm}) {
     const handleChange = event => {
         updateSearchTerm(event.target.value)
     }
+
+   
     return (
 
         <div>
@@ -16,7 +18,6 @@ export default function SearchBar({searchTerm, updateSearchTerm}) {
                 value={searchTerm} 
                 onChange={handleChange}>
                 </input>
-  
             </form>
         </div>
     )

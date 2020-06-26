@@ -75,3 +75,11 @@ h4{
     height: 55px;
     background-color: yellow;
 }
+
+.filterDiv{
+    margin: 20px;
+}
+.filter{
+    width: 100px;
+    height: 55px;
+}

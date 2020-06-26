@@ -2,12 +2,15 @@ import React, {Component} from 'react';
 import './App.css';
 import PokemonList from "./components/PokemonList"
 import SearchBar from "./components/SearchBar"
+import Filter from "./components/Filter"
+
 
 class App extends Component {
 
   state = {
     pokemon: [],
-    searchTerm: ""
+    searchTerm: "",
+    type: []
   }
   
   componentDidMount(){ 
@@ -27,8 +30,22 @@ class App extends Component {
 
   filterPokemon = () => {
     const {pokemon, searchTerm} = this.state
-   return pokemon.filter(pokemonData => {
+    return pokemon.filter(pokemonData => {
       return pokemonData.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+    })
+  }
+
+  updateType = type =>{
+    this.setState({
+      type: [...this.state.type, type]
+    })
+    this.filterType(type)
+  }
+
+  filterType = (type) => {
+    const {pokemon} = this.state
+    return pokemon.filter(pokemonData => {
+      return pokemonData.type.includes(type)
     })
   }
 
@@ -39,9 +56,13 @@ class App extends Component {
         <img className="title-img" src="./pokedex.png"></img>
         </div>
         <div className="search">
-        <SearchBar updateSearchTerm={this.updateSearchTerm} searchTerm={this.state.searchTerm}/>
+        <SearchBar updateSearchTerm={this.updateSearchTerm} 
+        searchTerm={this.state.searchTerm}
+        pokemon={this.filterPokemon()}
+        />
+        <Filter filterType={this.filterType} pokemon={this.filterPokemon()}/>
         </div>
-        <PokemonList pokemon={this.filterPokemon()}/>
+        <PokemonList pokemon={this.filterType()}/>
       </div>
     );
   }
