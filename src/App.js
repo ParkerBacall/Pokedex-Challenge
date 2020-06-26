@@ -10,7 +10,7 @@ class App extends Component {
   state = {
     pokemon: [],
     searchTerm: "",
-    type: []
+    type: ""
   }
   
   componentDidMount(){ 
@@ -37,13 +37,13 @@ class App extends Component {
 
   updateType = type =>{
     this.setState({
-      type: [...this.state.type, type]
+      type: type
     })
     this.filterType(type)
   }
 
-  filterType = (type) => {
-    const {pokemon} = this.state
+  filterType = () => {
+    const {pokemon, type} = this.state
     return pokemon.filter(pokemonData => {
       return pokemonData.type.includes(type)
     })
@@ -60,7 +60,7 @@ class App extends Component {
         searchTerm={this.state.searchTerm}
         pokemon={this.filterPokemon()}
         />
-        <Filter filterType={this.filterType} pokemon={this.filterPokemon()}/>
+        <Filter updateType={this.updateType} pokemon={this.filterPokemon()}/>
         </div>
         <PokemonList pokemon={this.filterType()}/>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export default function Filter({pokemon, filterType}) {
+export default function Filter({pokemon, updateType}) {
 
     const pokemonList = pokemon.map(pokemonData => {
         return pokemonData.type
@@ -22,7 +22,7 @@ export default function Filter({pokemon, filterType}) {
     })
 
     const handleChange = event => {
-        filterType(event.target.value)
+        updateType(event.target.value)
     }
 
     return (
