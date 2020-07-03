@@ -23,6 +23,14 @@ class App extends Component {
     }))
   }
 
+  uniq = (array) => {
+      return array.filter(this.onlyUnique)
+  } 
+
+  flatten = (array) => {
+      return [].concat.apply([], array)
+  }
+
   updateSearchTerm = term =>{
     this.setState({
       searchTerm: term
@@ -61,8 +69,8 @@ class App extends Component {
     })]
   }
 
-  const collapsedPokeArray = [].concat.apply([], pokeArray)
-  const uniquePokeArray = collapsedPokeArray.filter(this.onlyUnique)
+  const collapsedPokeArray = this.flatten(pokeArray)
+  const uniquePokeArray = this.uniq(collapsedPokeArray)
 
   return uniquePokeArray
   }

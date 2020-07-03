@@ -11,11 +11,14 @@ export default function Filter({pokemon, updateType}) {
         return self.indexOf(value) === index;
     }
     
+    const uniq = (array) => {
+        return array.filter(onlyUnique)
+    } 
 
 
    const typeArray = [].concat.apply([], pokemonList)
 
-    const uniqueTypeArray = typeArray.filter(onlyUnique)
+    const uniqueTypeArray = uniq(typeArray)
 
     const typeOptions = uniqueTypeArray.map(type=> {
         return <option>{type}</option>

@@ -11,11 +11,18 @@ export default function RefineSearch({pokemon, updateSecondaryType}) {
         return self.indexOf(value) === index;
     }
     
+    const uniq = (array) => {
+        return array.filter(onlyUnique)
+    } 
+
+    const flatten = (array) => {
+        return [].concat.apply([], array)
+    }
 
 
-   const typeArray = [].concat.apply([], pokemonList)
+   const typeArray = flatten(pokemonList)
 
-    const uniqueTypeArray = typeArray.filter(onlyUnique)
+    const uniqueTypeArray = uniq(typeArray)
 
     const typeOptions = uniqueTypeArray.map(type=> {
         return <option>{type}</option>
