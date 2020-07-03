@@ -92,8 +92,11 @@ finalFilter = () => {
   })
 }
 
+sortByNumber = (pokemonData) => {
+  return pokemonData.sort(function(a,b) {return a.num - b.num})
+}
+
   render(){
-    this.filterType()
     return (
       <div className="app">
         <div className='title-container'>
@@ -107,7 +110,7 @@ finalFilter = () => {
         <Filter updateType={this.updateType} pokemon={this.state.pokemon}/>
         <RefineSearch updateSecondaryType={this.updateSecondaryType} pokemon={this.state.pokemon}/>
         </div>
-        <PokemonList pokemon={this.finalFilter()}/>
+        <PokemonList pokemon={this.sortByNumber(this.finalFilter())}/>
       </div>
     );
   }
