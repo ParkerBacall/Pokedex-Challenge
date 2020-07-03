@@ -4,6 +4,7 @@ import PokemonList from "./components/PokemonList"
 import SearchBar from "./components/SearchBar"
 import Filter from "./components/Filter"
 import RefineSearch from "./components/RefineSearch"
+import Clear from "./components/Clear"
 
 
 class App extends Component {
@@ -84,7 +85,12 @@ class App extends Component {
     })
   }
 
-
+clearFilter = () => {
+  this.setState({
+    types: ['Grass', 'Poison', 'Fire', 'Flying', 'Water', 'Bug', 'Normal', 'Electric', 'Ground', 'Fighting', 'Psychic', 'Rock', 'Ice', 'Dragon', 'Ghost'],
+    secondary_type: ['Grass', 'Poison', 'Fire', 'Flying', 'Water', 'Bug', 'Normal', 'Electric', 'Ground', 'Fighting', 'Psychic', 'Rock', 'Ice', 'Dragon', 'Ghost'],
+  })
+}
 
 finalFilter = () => {
   return this.filterType().filter(pokemon => {
@@ -109,6 +115,7 @@ sortByNumber = (pokemonData) => {
         />
         <Filter updateType={this.updateType} pokemon={this.state.pokemon}/>
         <RefineSearch updateSecondaryType={this.updateSecondaryType} pokemon={this.state.pokemon}/>
+        <Clear clearFilter={this.clearFilter}/>
         </div>
         <PokemonList pokemon={this.sortByNumber(this.finalFilter())}/>
       </div>

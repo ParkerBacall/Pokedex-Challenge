@@ -29,7 +29,9 @@ export default function Filter({pokemon, updateType}) {
     }
 
     return (
+       
         <div className="filterDiv">
+         <h4 className="filterHeader">Filter by Type:</h4>
             <form >
                 <select className="filter" onChange={handleChange}>
                     {typeOptions}

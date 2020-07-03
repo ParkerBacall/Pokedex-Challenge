@@ -65,9 +65,10 @@ h4{
 }
 
 .searchBar{
+    padding-left: 10px;
     height: 50px;
     width: 200px;
-    margin: 20px;
+    margin-top: 20px;
 }
 
 .searchBtn{
@@ -76,10 +77,31 @@ h4{
     background-color: yellow;
 }
 
+.filterHeader{
+    margin: 18px;
+}
+
 .filterDiv{
-    margin: 20px;
+    display: flex;
+    margin-top: 20px;
 }
 .filter{
     width: 100px;
     height: 55px;
+}
+
+.clearButtonContainer{
+    margin: 26px;
+    padding-left: 15px;
+}
+
+.clearButton{
+    width: 80px;
+    height: 45px;
+    color: black;
+    font-size: 15px;
+    border: none;
+    box-shadow: 0px 0px 4px #666;
+    border-radius: 10px;
+    background-color: rgb(251, 204, 34);
 }

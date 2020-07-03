@@ -34,11 +34,13 @@ export default function RefineSearch({pokemon, updateSecondaryType}) {
 
     return (
         <div className="filterDiv">
+            <h4 className="filterHeader">Filter by Addition Type:</h4>
             <form >
                 <select className="filter" onChange={handleChange}>
                     {typeOptions}
                 </select>
             </form>
+     
         </div>
     )
 }
